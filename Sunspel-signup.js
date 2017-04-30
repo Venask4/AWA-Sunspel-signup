@@ -22,7 +22,9 @@ var exp = (function($) {
 	// Object containing variables, generally these would be strings or jQuery objects
 	exp.vars = {
 		telephoneMicrocopy: '<span class="AWA-microcopy">(For Delivery Updates)</span>',
-		passwordMicrocopy: '<span class="AWA-microcopy">Create a password for quicker checkout</span><br>'
+		passwordMicrocopy: '<span class="AWA-microcopy">Create a password for quicker checkout</span><br>',
+		enterAddress: '<div id="enterAddress"><a href="javascript:void(0);">Enter Address Manually</a><br><br></div>',
+		postCodeMicrocopy: '<span class="AWA-microcopy">Please use your post code to find your address</span><br><br>'
 	};
 
 	// Styles
@@ -60,6 +62,23 @@ var exp = (function($) {
 		// Add microcopy to Password label
 		var $passwordField = $('#billing-new-address-form .field label:contains("Password")').first();
 		$passwordField.prepend(exp.vars.passwordMicrocopy);
+
+		// Add microcopy to Post Code label
+		$('.field label:contains("Post Code")').first().prepend(exp.vars.postCodeMicrocopy);
+
+		// Hide address fields
+		$('#billing-new-address-form .field label:contains("Company")').first().parent().hide();
+		$('#billing-new-address-form .field label:contains("Street Address")').parent().hide();
+		$('#billing-new-address-form .field label:contains("Town")').first().parent().hide();
+		$('#billing-new-address-form .field label:contains("Count")').parent().hide();
+		$postCodeField.after(exp.vars.enterAddress);
+		$('#enterAddress').on('click', function() {
+			$('#billing-new-address-form .field label:contains("Company")').first().parent().show();
+			$('#billing-new-address-form .field label:contains("Street Address")').parent().show();
+			$('#billing-new-address-form .field label:contains("Town")').first().parent().show();
+			$('#billing-new-address-form .field label:contains("Count")').parent().show();
+			$(this).remove();
+		})
 	};
 
 	exp.init();
