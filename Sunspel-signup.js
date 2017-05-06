@@ -21,10 +21,10 @@ var exp = (function($) {
 	// Variables
 	// Object containing variables, generally these would be strings or jQuery objects
 	exp.vars = {
-		telephoneMicrocopy: '<span class="AWA-microcopy">(For Delivery Updates)</span>',
+		telephoneMicrocopy: '<span class="AWA-microcopy">(For delivery updates)</span>',
 		passwordMicrocopy: '<span class="AWA-microcopy">Create a password for quicker checkout</span><br>',
 		enterAddress: '<div id="enterAddress"><a href="javascript:void(0);">Enter Address Manually</a><br><br></div>',
-		postCodeMicrocopy: '<span class="AWA-microcopy">Please use your post code to find your address</span><br><br>'
+		postCodeMicrocopy: '<span class="AWA-microcopy">Please use your post code to find your address</span><br>'
 	};
 
 	// Styles
@@ -35,7 +35,10 @@ var exp = (function($) {
 		}\
 		.AWA-microcopy {\
 			font-family: "Gill Sans W01", "Gill Sans", "Gill Sans MT", Helvetica, Arial, sans-serif;\
-			font-size: 10px;\
+			font-size: .875rem;\
+			color: #7e8083;\
+			letter-spacing: .025em;\
+			text-transform: none;\
 		}\
 	';
 
