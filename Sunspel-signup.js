@@ -22,7 +22,7 @@ var exp = (function($) {
 	// Object containing variables, generally these would be strings or jQuery objects
 	exp.vars = {
 		telephoneMicrocopy: '<span class="AWA-microcopy">(For delivery updates)</span>',
-		passwordMicrocopy: '<span class="AWA-microcopy">Create a password for quicker checkout</span><br>',
+		passwordMicrocopy: '<span class="AWA-microcopy">Please enter a password for your Sunspel account</span><br>',
 		enterAddress: '<div id="enterAddress"><a href="javascript:void(0);">Enter Address Manually</a><br><br></div>',
 		postCodeMicrocopy: '<span class="AWA-microcopy">Please use your post code to find your address</span><br>'
 	};
